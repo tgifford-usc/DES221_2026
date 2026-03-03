@@ -1,3 +1,37 @@
+:host {
+    display: block;
+    color-scheme: var(--component-color-scheme, light);
+    --title-panel-color: #2f251e;
+    --title-panel-border-color: rgba(110, 72, 39, 0.16);
+    --title-panel-background:
+        radial-gradient(circle at top left, rgba(244, 162, 97, 0.24), transparent 40%),
+        linear-gradient(135deg, #fff8ef, #f1e1cf);
+    --title-panel-shadow: 0 16px 32px rgba(143, 101, 65, 0.14);
+    --expand-button-background-color: #f08b49;
+    --expand-button-text-color: #fffaf5;
+    --main-panel-background:
+        linear-gradient(180deg, rgba(255, 251, 245, 0.98), rgba(244, 235, 224, 0.98));
+    --main-panel-background-color: #f6efe6;
+    --main-panel-color: #2c241d;
+    --main-panel-border-color: rgba(110, 72, 39, 0.14);
+    --main-panel-shadow: 0 22px 44px rgba(143, 101, 65, 0.12);
+    --sub-panel-background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(250, 243, 235, 0.96));
+    --sub-panel-background-color: #fffaf4;
+    --sub-panel-border-color: rgba(110, 72, 39, 0.12);
+    --sub-panel-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    --toggle-button-on-color: linear-gradient(135deg, #3da77a, #2b815d);
+    --toggle-button-on-border-color: rgba(43, 129, 93, 0.22);
+    --toggle-button-on-font-color: #fafffc;
+    --toggle-button-off-color: linear-gradient(135deg, #8e7f74, #6f645b);
+    --toggle-button-off-border-color: rgba(111, 100, 91, 0.18);
+    --toggle-button-off-font-color: #fffaf6;
+    --send-button-background-color: linear-gradient(135deg, #f4a261, #eb7a53);
+    --send-button-border-color: rgba(235, 122, 83, 0.22);
+    --field-color: #2d241d;
+    --code-background: #fffdf9;
+}
+
 .vertical-panel {
     display: flex;
     flex-direction: column;
@@ -9,108 +43,203 @@
 }
 
 .main-strip {
-    margin-bottom: 10px;
-    font-family: var(--title-panel-font-family, Verdana, Geneva, Tahoma, sans-serif);
-    font-size: var(--title-panel-font-size, 16px);
-    color: var(--title-panel-color, aliceblue);
+    margin-bottom: 1rem;
+    font-family: var(--title-panel-font-family, "Trebuchet MS", "Segoe UI", sans-serif);
+    font-size: var(--title-panel-font-size, 1rem);
+    color: var(--title-panel-color, #f7efe4);
 }
 
-
-.main-panel {
-    width: 1200px;
+#customGraphicsTitlePanel {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    min-height: 3.5rem;
+    padding: 0.4rem 0.55rem 0.4rem 0.4rem;
+    border-radius: var(--title-panel-border-radius, 999px);
+    border-style: var(--title-panel-border-style, solid);
+    border-width: var(--title-panel-border-width, 1px);
+    border-color: var(--title-panel-border-color, rgba(255, 255, 255, 0.14));
+    background: var(
+        --title-panel-background,
+        radial-gradient(circle at top left, rgba(255, 166, 77, 0.22), transparent 42%),
+        linear-gradient(135deg, rgba(29, 22, 18, 0.96), rgba(57, 30, 21, 0.92))
+    );
+    box-shadow: var(--title-panel-shadow, 0 16px 40px rgba(0, 0, 0, 0.28));
 }
-
 
 .title-panel-collapsed {
-    align-items: center;
-    border-style: var(--title-panel-border-style, solid);
-    border-color:var(--title-panel-border-color, rgb(118, 28, 28));
+    width: fit-content;
 }
-
 
 .title-panel-expanded {
-    align-items: center;
-    border-style: none;
+    width: 100%;
+    margin-bottom: 0.85rem;
 }
 
+#CustomGraphicsMainLabel {
+    flex: 1;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.expand-collapse-button,
+.fullscreen-button,
+.copy-button,
+.clear-button,
+.play-button,
+.show-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--control-height, 3rem);
+    padding: var(--toggle-button-padding, 0.65rem 1.15rem);
+    margin: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: var(--toggle-button-border-radius, 999px);
+    font-size: var(--toggle-button-font-size, 0.95rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff9f3;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+.expand-collapse-button {
+    width: 2.6rem;
+    padding: 0;
+    border: none;
+    background: linear-gradient(135deg, var(--expand-button-background-color, #ff8a3d), #ff5f45);
+    color: var(--expand-button-text-color, #fff7f1);
+    font-size: 1.15rem;
+    line-height: 1;
+    box-shadow: 0 10px 22px rgba(255, 106, 61, 0.28);
+}
+
+.fullscreen-button,
+.copy-button,
+.clear-button,
+.play-button,
+.show-button {
+    background: var(--send-button-background-color, linear-gradient(135deg, #ff8a3d, #ff5f45));
+    border-color: var(--send-button-border-color, rgba(255, 157, 108, 0.45));
+    box-shadow: 0 12px 22px rgba(255, 106, 61, 0.22);
+}
+
+.play-button.toggled-on,
+.show-button.toggled-on {
+    background: var(--toggle-button-on-color, linear-gradient(135deg, #2db983, #1a8b64));
+    border-color: var(--toggle-button-on-border-color, rgba(92, 247, 191, 0.4));
+    color: var(--toggle-button-on-font-color, #f3fff9);
+    box-shadow: 0 12px 24px rgba(31, 164, 116, 0.2);
+}
+
+.play-button.toggled-off,
+.show-button.toggled-off {
+    background: var(--toggle-button-off-color, linear-gradient(135deg, #43384f, #2d2737));
+    border-color: var(--toggle-button-off-border-color, rgba(255, 255, 255, 0.1));
+    color: var(--toggle-button-off-font-color, #fff8f2);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
+}
+
+.expand-collapse-button:hover,
+.fullscreen-button:hover,
+.copy-button:hover,
+.clear-button:hover,
+.play-button:hover,
+.show-button:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+.expand-collapse-button:active,
+.fullscreen-button:active,
+.copy-button:active,
+.clear-button:active,
+.play-button:active,
+.show-button:active {
+    transform: translateY(0);
+}
+
+.graphics-panel {
+    display: flex;
+    gap: 0.9rem;
+    width: min(100%, 78rem);
+    margin: var(--main-panel-margin, 0);
+    padding: var(--main-panel-padding, 1rem);
+    border-style: var(--main-panel-border-style, solid);
+    border-width: var(--main-panel-border-width, 1px);
+    border-color: var(--main-panel-border-color, rgba(255, 255, 255, 0.09));
+    border-radius: var(--main-panel-border-radius, 1.5rem);
+    background: var(
+        --main-panel-background,
+        linear-gradient(180deg, rgba(24, 22, 26, 0.98), rgba(14, 14, 17, 0.98)),
+        var(--main-panel-background-color, #121318)
+    );
+    color: var(--main-panel-color, #f4efe7);
+    font-family: var(--main-panel-font-family, "Trebuchet MS", "Segoe UI", sans-serif);
+    box-shadow: var(--main-panel-shadow, 0 24px 50px rgba(0, 0, 0, 0.3));
+}
 
 .custom-graphics-canvas {
-    border-style: solid;
-    border-color:rgb(118, 28, 28)
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--sub-panel-border-color, rgba(255, 255, 255, 0.08));
+    border-radius: var(--sub-panel-border-radius, 1.15rem);
+    background: #050608;
+}
+
+#customGraphicsControls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: var(--panel-min-height, 4rem);
+    padding: var(--panel-padding, 0.65rem 0.85rem);
+    border: 1px solid var(--sub-panel-border-color, rgba(255, 255, 255, 0.08));
+    border-radius: var(--sub-panel-border-radius, 1.15rem);
+    background: var(
+        --sub-panel-background,
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+        var(--sub-panel-background-color, #1d2027)
+    );
+    box-shadow: var(--sub-panel-shadow, inset 0 1px 0 rgba(255, 255, 255, 0.03));
 }
 
 .custom-graphics-code-pre {
-    height: 400px;
+    margin: 0;
+    padding: 1rem 1.1rem;
+    height: min(26rem, 55vh);
+    overflow: auto;
+    border: 1px solid var(--sub-panel-border-color, rgba(255, 255, 255, 0.08));
+    border-radius: var(--sub-panel-border-radius, 1.15rem);
+    background: var(--code-background, #0b0d12);
+    color: var(--field-color, #eef4ff);
 }
 
+@media (max-width: 720px) {
+    #customGraphicsTitlePanel {
+        width: 100%;
+    }
 
-.toggled-on {
-    margin: var(--toggle-button-margin, 10px);
-    background-color: var(--toggle-button-on-color, rgb(44, 104, 46)); /* Green */
-    border-style: var(--toggle-button-on-border-style, none);
-    border-color: var(--toggle-button-on-border-color, rgb(44, 104, 46));
-    color: var(--toggle-button-on-font-color, white);
-    padding: var(--toggle-button-padding, 15px 32px);
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: var(--toggle-button-on-font-size, 16px);
-    border-radius: var(--toggle-button-border-radius, 5%);
-}
+    .graphics-panel {
+        width: 100%;
+        padding: 0.85rem;
+    }
 
+    #customGraphicsControls {
+        justify-content: stretch;
+    }
 
-.toggled-off {
-    background-color: var(--toggle-button-off-color, rgb(111, 27, 27));  /* Red */
-    margin: var(--toggle-button-margin, 10px);
-    border-style: var(--toggle-button-off-border-style, none);
-    border-color: var(--toggle-button-off-border-color, rgb(111, 27, 27));
-    color: var(--toggle-button-off-font-color, white);
-    padding: var(--toggle-button-padding, 15px 32px);
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: var(--toggle-button-off-font-size, 16px);
-    border-radius: var(--toggle-button-border-radius, 5%);
-}
-
-
-.copy-button {
-    background-color: rgb(72, 39, 163);
-    margin: 10px;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5%;
-}
-
-
-.clear-button {
-    background-color: rgb(72, 39, 163);
-    margin: 10px;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5%;
-}
-
-
-.expand-collapse-button {
-    background-color: var(--expand-button-background-color, rgb(72, 39, 163));
-    margin: 10px;
-    border: none;
-    color: var(--expand-button-text-color,white);
-    /* padding: 15px 32px; */
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 10px;
-    border-radius: 5%;
+    .fullscreen-button,
+    .copy-button,
+    .clear-button,
+    .play-button,
+    .show-button {
+        width: 100%;
+    }
 }
