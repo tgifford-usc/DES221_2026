@@ -16,8 +16,10 @@ custom-serial {
     --title-panel-border-radius: 999px;
     --title-panel-font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     --title-panel-font-size: 1rem;
-    --expand-button-background-color: #f08b49;
-    --expand-button-text-color: #fffaf5; */
+    --expand-button-background: linear-gradient(135deg, #f08b49, #eb6a3a);
+    --expand-button-text-color: #fffaf5;
+    --expand-button-shadow: 0 10px 22px rgba(240, 139, 73, 0.28);
+    --expand-button-shadow-active: 0 6px 14px rgba(240, 139, 73, 0.22); */
 
     /* expanded panel */
     /* --main-panel-background-color: #f6efe6;
@@ -41,14 +43,20 @@ custom-serial {
     --toggle-button-on-color: linear-gradient(135deg, #3da77a, #2b815d);
     --toggle-button-on-border-color: rgba(43, 129, 93, 0.22);
     --toggle-button-on-font-color: #fafffc;
+    --toggle-button-on-shadow: 0 12px 24px rgba(61, 167, 122, 0.2);
     --toggle-button-off-color: linear-gradient(135deg, #8e7f74, #6f645b);
     --toggle-button-off-border-color: rgba(111, 100, 91, 0.18);
     --toggle-button-off-font-color: #fffaf6;
+    --toggle-button-off-shadow: 0 10px 18px rgba(143, 101, 65, 0.15);
     --send-button-background-color: linear-gradient(135deg, #f4a261, #eb7a53);
-    --send-button-border-color: rgba(235, 122, 83, 0.22); */
+    --send-button-border-color: rgba(235, 122, 83, 0.22);
+    --send-button-shadow: 0 12px 22px rgba(235, 122, 83, 0.22); */
 
     /* text fields */
-    /* --field-background-color: #fffdf9;
+    /* --field-border: 1px solid rgba(110, 72, 39, 0.15);
+    --field-border-radius: 1rem;
+    --field-font-size: 0.95rem;
+    --field-background-color: #fffdf9;
     --field-color: #2d241d; */
 }
 
@@ -69,8 +77,10 @@ custom-serial[data-theme="dark"] {
         radial-gradient(circle at top left, rgba(255, 166, 77, 0.22), transparent 42%),
         linear-gradient(135deg, rgba(29, 22, 18, 0.96), rgba(57, 30, 21, 0.92));
     --title-panel-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
-    --expand-button-background-color: #ff8a3d;
+    --expand-button-background: linear-gradient(135deg, #ff8a3d, #ff5f45);
     --expand-button-text-color: #fff7f1;
+    --expand-button-shadow: 0 10px 22px rgba(255, 106, 61, 0.28);
+    --expand-button-shadow-active: 0 6px 14px rgba(255, 106, 61, 0.22);
 
     --main-panel-background-color: #121318;
     --main-panel-color: #f4efe7;
@@ -88,14 +98,20 @@ custom-serial[data-theme="dark"] {
     --toggle-button-on-color: linear-gradient(135deg, #2db983, #1a8b64);
     --toggle-button-on-border-color: rgba(92, 247, 191, 0.4);
     --toggle-button-on-font-color: #f3fff9;
+    --toggle-button-on-shadow: 0 12px 24px rgba(45, 185, 131, 0.22);
 
     --toggle-button-off-color: linear-gradient(135deg, #43384f, #2d2737);
     --toggle-button-off-border-color: rgba(255, 255, 255, 0.1);
     --toggle-button-off-font-color: #fff8f2;
+    --toggle-button-off-shadow: 0 10px 18px rgba(0, 0, 0, 0.22);
 
     --send-button-background-color: linear-gradient(135deg, #ff8a3d, #ff5f45);
     --send-button-border-color: rgba(255, 157, 108, 0.45);
+    --send-button-shadow: 0 12px 22px rgba(255, 106, 61, 0.22);
 
+    --field-border: 1px solid rgba(255, 255, 255, 0.09);
+    --field-border-radius: 1rem;
+    --field-font-size: 0.95rem;
     --field-background-color: #0f1218;
     --field-color: #eef4ff;
     --readout-background:
