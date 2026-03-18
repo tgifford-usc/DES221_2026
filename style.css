@@ -1,11 +1,24 @@
+:root {
+    --color-accent: #f4a261;
+    --color-accent-secondary: #eb7a53;
+    --color-success: #3da77a;
+    --color-success-secondary: #2b815d;
+    --color-accent-glow: color-mix(in srgb, var(--color-accent) 25%, transparent);
+    --color-surface: #fff8ef;
+    --color-surface-mid: #f4ede4;
+    --color-surface-deep: #efe6da;
+    --color-text: #2f251e;
+    --color-text-on-accent: #fffaf5;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
     padding: 2rem;
     background:
-        radial-gradient(circle at top, rgba(244, 162, 97, 0.28), transparent 30%),
-        linear-gradient(180deg, #fff8ef, #f4ede4 44%, #efe6da);
-    color: #2f251e;
+        radial-gradient(circle at top, var(--color-accent-glow), transparent 30%),
+        linear-gradient(180deg, var(--color-surface), var(--color-surface-mid) 44%, var(--color-surface-deep));
+    color: var(--color-text);
     font-family: "Trebuchet MS", "Segoe UI", sans-serif;
 }
 
@@ -17,7 +30,7 @@ textarea {
 }
 
 button {
-    background: linear-gradient(135deg, #f4a261, #eb7a53);
+    background: linear-gradient(135deg, var(--color-accent, #f4a261), var(--color-accent-secondary, #eb7a53));
     margin: 0.625rem;
     border: 1px solid rgba(235, 122, 83, 0.22);
     color: #fffaf5;
@@ -33,15 +46,22 @@ button {
 
 body.dark-theme,
 body[data-theme="dark"] {
+    --color-accent: #ff8a3d;
+    --color-accent-secondary: #ff5f45;
+    --color-accent-glow: color-mix(in srgb, var(--color-accent) 12%, transparent);
+    --color-surface: #07080b;
+    --color-surface-mid: #14161c;
+    --color-surface-deep: #101217;
+    --color-text: #f3ecdf;
     background:
-        radial-gradient(circle at top, rgba(255, 138, 61, 0.12), transparent 28%),
-        linear-gradient(180deg, #07080b, #14161c 42%, #101217);
-    color: #f3ecdf;
+        radial-gradient(circle at top, var(--color-accent-glow), transparent 28%),
+        linear-gradient(180deg, var(--color-surface), var(--color-surface-mid) 42%, var(--color-surface-deep));
+    color: var(--color-text);
 }
 
 body.dark-theme button,
 body[data-theme="dark"] button {
-    background: linear-gradient(135deg, #ff8a3d, #ff5f45);
+    background: linear-gradient(135deg, var(--color-accent, #ff8a3d), var(--color-accent-secondary, #ff5f45));
     border-color: rgba(255, 157, 108, 0.35);
     color: #fff8f1;
     box-shadow: 0 12px 24px rgba(255, 106, 61, 0.2);
