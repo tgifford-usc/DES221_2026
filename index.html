@@ -3,6 +3,8 @@
   <head>
     <title>DES221</title>
     <script src="components/SerialComponent/SerialComponent.js"></script>
+    <script src="components/MidiComponent/MidiComponent.js"></script>
+    <script src="components/GraphicsComponent/GraphicsComponent.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="componentStyle.css">
   </head>
@@ -15,6 +17,10 @@
     
     <!-- Interface element for controlling serial library. Make sure Serial.js is loaded first -->
     <custom-serial id="customSerial" class="light-theme"></custom-serial>
+    <custom-midi id="customMidi" class="light-theme"></custom-midi>
+    <custom-graphics id="customGraphics" class="light-theme"></custom-graphics>
+
+
 
     <!-- javascript for controlling your interface goes in index.js -->
     <script src="index.js"></script>
