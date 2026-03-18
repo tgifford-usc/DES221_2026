@@ -3,18 +3,25 @@
   <head>
     <title>DES221</title>
     <script src="components/SerialComponent/SerialComponent.js"></script>
+    <script src="components/MidiComponent/MidiComponent.js"></script>
+    <script src="components/GraphicsComponent/GraphicsComponent.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="componentStyle.css">
   </head>
   <body class="light-theme">
     
     <!-- add your html interface here -->            
-    
+    <button id="button1">Button 1</button>
+    <button id="button2">Button 2</button>
+    <button id="button3">Button 3</button>
+
     <!-- javascript library for serial communication with microbit -->
     <script src="libraries/Serial.js"></script>
     
     <!-- Interface element for controlling serial library. Make sure Serial.js is loaded first -->
     <custom-serial id="customSerial" class="light-theme"></custom-serial>
+    <custom-midi id="customMidi" class="light-theme"></custom-midi>
+    <custom-graphics id="customGraphics" class="light-theme"></custom-graphics>
 
     <!-- javascript for controlling your interface goes in index.js -->
     <script src="index.js"></script>
