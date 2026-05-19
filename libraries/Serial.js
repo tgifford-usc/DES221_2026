@@ -190,7 +190,8 @@ class Serial {
             try {
                 console.log("Requesting Bluetooth Device...");
                 this.uBitBTDevice = await navigator.bluetooth.requestDevice({
-                    filters: [{ namePrefix: "BBC micro:bit" }],
+                    //filters: [{ namePrefix: "BBC micro:bit" }],
+                    acceptAllDevices: true,
                     optionalServices: [UART_SERVICE_UUID]
                 });
             
